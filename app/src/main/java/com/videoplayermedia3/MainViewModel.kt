@@ -6,15 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.WhileSubscribed
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel @Inject constructor(
-    private val savedStanteHandle: SavedStateHandle // guarda e restaura o estado da ViewModel (msm após rotação de tela, por exemplo)
-    val player: Player //player pra poder realizar as ações de play, pause, passar pro prox video, etc
+    private val savedStanteHandle: SavedStateHandle, // guarda e restaura o estado da ViewModel (msm após rotação de tela, por exemplo)
+    val player: Player, //player pra poder realizar as ações de play, pause, passar pro prox video, etc
     private val metaDataReader: MetaDataReader
 ): ViewModel() {
 

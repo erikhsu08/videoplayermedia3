@@ -78,6 +78,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(16.dp)
+                        .padding(top = 40.dp)
                 ){
                     AndroidView(
                         factory = { context ->
@@ -112,6 +113,9 @@ class MainActivity : ComponentActivity() {
                         Icon(
                             imageVector = Icons.Default.FileOpen,
                             contentDescription = "select video"
+                        )
+                        Text(
+                            text = "Escolher arquivo"
                         )
                     }
                     Spacer(modifier = Modifier.height(16.dp))
